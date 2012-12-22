@@ -1,6 +1,6 @@
 /**
- * Backbone localStorage Adapter
- * https://github.com/jeromegn/Backbone.localStorage
+ * Backbone chrome.storage.local adapter
+ * https://github.com/tamilmani58/jus4friendzz/blob/master/backbonejs.chromeStorage.js
  */
 
 (function(_, Backbone) {
