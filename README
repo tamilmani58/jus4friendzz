@@ -1,0 +1,6 @@
+This is a forked version of https://github.com/jeromegn/Backbone.localStorage/blob/master/backbone.localStorage.js
+Support for CRUD in chrome local storage [https://developer.chrome.com/extensions/storage.html]
+Normal Backbone.sycn is avaialble as ajaxSync
+Chrome local storage is asynchronous[different from default localStorage] and can store objects directly.
+Using backbone for packaged chrome apps to work offline needed support for sync.As default localStorage is forbidden in manifest version 2, forked the localStorage adapter of jeromegn.
+
