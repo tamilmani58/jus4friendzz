@@ -1,4 +1,7 @@
-This is a forked version of https://github.com/jeromegn/Backbone.localStorage/blob/master/backbone.localStorage.js
+Features Recorder is a experimental chrome app I built using
+Backbone & Bootstrap
+
+It uses a forked version of https://github.com/jeromegn/Backbone.localStorage/blob/master/backbone.localStorage.js
 Support for CRUD in chrome local storage [https://developer.chrome.com/extensions/storage.html]
 Normal Backbone.sync is avaialble as ajaxSync.
 Chrome local storage is asynchronous[different from default localStorage] and can store objects directly.
