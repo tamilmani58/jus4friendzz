@@ -1,0 +1,106 @@
+body {
+	padding-top: 40px;
+}
+
+.heading {
+	float: right;
+	font-size: 40px;
+	color: gray;
+}
+.heading span {
+	color: #038C33;
+	font-weight: bold;
+}
+
+.menu {
+	margin-top: 20px;
+}
+
+.menu ul {
+	margin: 0;
+	padding: 0;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, .065);
+}
+
+.menu ul li, .flist ul li {
+	list-style-type: none;
+	margin: 0;
+}
+
+.menu ul li a {
+	border: 1px solid #E5E5E5;
+	padding: 10px 5px;
+	width: 290px;
+	display:inline-block;
+	margin: 0 0 -1px;
+	text-decoration: none;
+	color: #038C33;
+}
+
+#flist-cont ul li a {
+	border-bottom: 1px solid #E5E5E5;
+	color: gray;
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	margin-top: 20px;
+}
+
+.menu ul li a i {
+	float: right;
+}
+.menu ul > .active > a,
+.menu ul > .active > a:hover {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #5bb75b;
+  *background-color: #51a351;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#51a351));
+  background-image: -webkit-linear-gradient(top, #62c462, #51a351);
+  background-image: -o-linear-gradient(top, #62c462, #51a351);
+  background-image: linear-gradient(to bottom, #62c462, #51a351);
+  background-image: -moz-linear-gradient(top, #62c462, #51a351);
+  background-repeat: repeat-x;
+  border-color: #51a351 #51a351 #387038;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
+  filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+  text-decoration: none;
+}
+
+.menu ul > li > a:hover > i {
+	opacity: 0.5;
+}
+.menu ul > li > a:hover {
+ 	background-color: #f5f5f5;
+}
+#aefile, #afile, .new > a {
+	text-decoration: none;
+	font-size: 25px;
+	color: gray;
+}
+.new > a:hover {
+	color: #038C33;
+}
+.foptions {
+	float: right;
+}
+.flist {
+	margin-top: 20px;
+	*display: none;
+}
+.feature {
+	border-bottom: 1px solid #E5E5E5;
+	margin-top: 10px;
+}
+.error {
+	color: red;
+}
+.fdesc a {
+	float: right;
+}
+/* .fdesc {
+	border-bottom: 1px solid #E5E5E5;
+	color: gray;
+	font-size: 16px;
+} */

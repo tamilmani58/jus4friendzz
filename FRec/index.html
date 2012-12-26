@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="assets/css/main.css" rel="stylesheet" />
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container">
+	<div class="row">
+		<div class="span4">
+				<div class="new">
+					<a href="#" class="tool-tip" data-toggle="modal" data-target="#feature-modal" rel="tooltip" data-placement="right" data-original-title="Add New Feature">&#10010;</a>
+					 <div id="feature-modal" class="modal" tabindex="-1" role='dialogue' aria-hidden='false' aria-labelledby='proj-def' style="display:none;">
+			          	  <div class="modal-header">
+						    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						    <h3 id="proj-def">New Feature</h3>
+						  </div>	
+				          <div class="modal-body">
+				          	<input type="text" id="fname" rel="tooltip" data-placement="right" data-original-title="Can't be a nameless feature" class="required man-tooltip" placeholder="Feature Title" /> <br />
+				          	<div class="ffiles">
+				          		<input type="text" class="file-search" placeholder="Add File" />
+				          		<a href="#" id="afile" style="font-size: 14px">&#10010;</a> <br />
+				          	</div>
+				          	<label class="checkbox"><input id="flive" type="checkbox"> Live	</label>
+				          	<textarea rows="3" id="fdesc" class="optional" style="width: 350px" placeholder="Feature Description"></textarea> <br />
+				          	<input type="button" id="new-feature" class="btn" value="Create Feature"  disabled="disabled " /> 
+				          </div>
+				     </div>
+				</div>
+		</div>
+		<div class="span8">
+			<div class="heading">
+				<span>F</span>eatures <span>R</span>ecorder
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<div class="row">
+		<div class="span4">
+			<div class="menu">
+				<ul id="feature-list">
+				</ul>
+			</div>
+			<br />
+		</div>
+		<div class="span8 fplaceholder">
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	</div>
+</body>
+<script type="text/template" id="proj-template">
+      <a href="#"><i class="icon-chevron-right"></i><%= title %></a>
+</script>
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="assets/js/json2.js"></script>
+<script type="text/javascript" src="assets/js/underscore.min.js"></script>
+<script type="text/javascript" src="assets/js/backbone.js"></script>
+<script type="text/javascript" src="assets/js/backbonejs.localStorage.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+</html>

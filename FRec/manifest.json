@@ -1,0 +1,19 @@
+{
+	"name": "FRec",
+	"version": "0.1",
+	"manifest_version": 2,
+	"description": "A Recorder of features being made live in our code base",
+	"offline_enabled": true,
+	"icons": {
+		"16" : "assets/img/icon-128x128.png",
+		"128": "assets/img/icon-128x128.png"
+	},
+	"app": {
+	    "background": {
+	      "scripts": ["assets/js/main.js"]
+	    }
+  	},
+  	"permissions": [
+    	"storage"
+  	]
+}
