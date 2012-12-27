@@ -84,7 +84,7 @@ $(function () {
 				files.push($(value).val());
 			});
 			data['files'] = _.compact(files);
-			_.union(FilesList, files);
+			FilesList = _.union(FilesList, files);
 			this.model.save(data, option);
 		},
 		setTypeAhead: function () {
