@@ -219,7 +219,9 @@ $(function () {
 			Features.create(data, option);
 		},
 		addFile: function () {
-			$("<br /><input type='text' placeholder='Add File' />").insertBefore(".ffiles > a");
+			$("<br /><input type='text' placeholder='Add File' />")
+			 .insertBefore(".ffiles > a")
+			 .typeahead({source: FilesList, items: 4});
 		},
 		addOne: function (model) {
 			var view = new FeatureView({model: model});
