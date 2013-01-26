@@ -1,0 +1,3 @@
+So you've become comfortable with jQuery and would like to learn how to write your own plugins. 
+Great! You're in the right spot. Extending jQuery with plugins and methods is very powerful and can save you and your peers a lot of development time by abstracting your most clever functions into plugins. 
+This post will outline the basics, best practices, and common pitfalls to watch out for as you begin writing your plugin.

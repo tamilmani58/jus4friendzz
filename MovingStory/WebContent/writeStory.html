@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Moving Story</title>
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" />
+<link rel="stylesheet" href="assets/css/writeStory.css" />
+<script type="text/javascript" src="assets/js/libs/jquery.js"></script>
+<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/plugins/selection.js"></script>
+<script type="text/javascript">
+var selectedText;
+$().ready(function(){
+	console.log('hai');
+	$("#formatBold").click(function(){
+		formatSelectionOld('*');
+	});
+	$("#formatItalic").click(function(){
+		formatSelectionOld('~');
+	});
+	
+	
+});
+
+function wrapSelected(type){
+	selectedText.addClass('h1');
+};
+
+function formatSelection(markUp){
+	var markUpStart  = "<"+markUp+">";
+	var markUpEnd  = "</"+markUp+">";
+	var range = getRange();
+	var start = $(range.startContainer);
+	var sPar = start.parent();
+	var end = $(range.endContainer);
+	var ePar = end.parent();
+	while(!$(sPar).is('.editBox span'))
+	{
+		start = $(start).parent();
+		sPar = $(sPar).parent();
+	}
+	
+	while(!$(sPar).is('.editBox span'))
+	{
+		start = $(start).parent();
+		sPar = $(sPar).parent();
+	}
+	var replace = $(start).text().substr(0, range.startOffset); 
+	var middle = $(start).text().substr(range.startOffset,range.endOffset-range.startOffset);
+	middle = middle.replace(new RegExp(markUpStart,'g'),"").replace(new RegExp(markUpEnd,'g'),"");
+	middle = markUpStart+middle+markUpEnd;
+	var end = $(start).text().substr(range.endOffset);
+	$(".editBox  span").html(replace+middle+end);
+	
+}
+
+function formatSelectionOld(markUp){
+	
+	var range = getRange();
+	var start = $(range.startContainer);
+	var end = $(range.endContainer);
+	var replace = $(start).text().substr(0, range.startOffset); 
+	var middle = $(start).text().substr(range.startOffset,range.endOffset-range.startOffset);
+	var end = $(start).text().substr(range.endOffset);
+	var stars = middle.match(/\*/g);
+	if(stars && stars.length%2 ==1)
+	{
+		middle = middle.replace(new RegExp('\\'+markUp,'g'),"");	
+		if(replace.match(/\*/g) && replace.match(/\*/g).length %2 ==1)
+			middle = middle+markUp;
+		else
+			middle = markUp+middle;
+	}	
+	else
+	{
+		middle = markUp+middle+markUp;
+	}	
+	
+	$(".editBox").html(replace+middle+end);
+	$(".previewBox").html(getPreview(replace+middle+end));
+	
+}
+
+function getPreview(str){
+	var ret = str;
+	var backSlash = "";
+	while(ret.match(/\*/g) && ret.match(/\*/g).length > 0)
+	{
+		
+		ret = ret.replace("*","<"+backSlash+"b>")
+		if(backSlash=="") backSlash = "/";
+		else backSlash =="";
+	}
+	var backSlash = "";
+	while(ret.match(/\~/g) && ret.match(/\~/g).length > 0)
+	{
+		
+		ret = ret.replace("~","<"+backSlash+"i>")
+		if(backSlash=="") backSlash = "/";
+		else backSlash =="";
+	}
+	return ret;
+}
+
+</script>
+</head>
+<body>
+
+<div class="container">
+	<div class="navbar">
+	  <div class="navbar-inner">
+	    <a class="brand" href="#">Tool Bar</a>
+	    <ul class="nav" >
+	      <li ><a id="formatBold" href="#" ><b>B</b></a></li>
+	      <li><a id="formatItalic" href="#"><i>I</i></a></li>
+	    </ul>
+	  </div>
+    </div>
+	
+	<div class="row">
+		<div class="span12">
+			<div class="editBox" contenteditable="true">
+			This is a sample text message. 
+			</div> 
+			<div class="previewBox" >
+			 
+			</div> 
+			
+			
+			
+		</div>
+		
+	</div>
+</div>
+</body>
+</html>
